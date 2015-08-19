@@ -19,7 +19,7 @@ namespace Project.Console.Installers
             var iProjData = Component.For<IProjectData>().ImplementedBy<ProjectDataLocal>();
             iProjData.Interceptors(typeof(ExceptionAspect));
 
-            if (isProd)
+            if (!isProd)
             {
                 iProjData.Interceptors(typeof(TimingAspect));
             }
